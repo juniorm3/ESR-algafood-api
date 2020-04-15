@@ -64,7 +64,7 @@ public class CozinhaController {
 			// cozinhaTual.setNome(cozinha.getNome());
 			BeanUtils.copyProperties(cozinha, cozinhaTual, "id");
 
-			cozinhaRepository.salvar(cozinhaTual);
+			cozinhaTual = cozinhaRepository.salvar(cozinhaTual);
 
 			return ResponseEntity.ok(cozinhaTual);
 		}
