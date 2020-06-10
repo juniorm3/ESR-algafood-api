@@ -17,7 +17,7 @@ public interface RestauranteRepository
 	JpaSpecificationExecutor<Restaurante>{
 	
 	
-	@Query("from Restaurante r join fetch r.cozinha left join fetch r.formasPagamento")
+	@Query("select distinct r from Restaurante r join fetch r.cozinha join fetch r.formasPagamento")
 	List<Restaurante> findAll();
 	
 
